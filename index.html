@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+  <head>
+    <link data-require="bootstrap-css@3.3.6" data-semver="3.3.6" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
+    <script data-require="angularjs@1.5.7" data-semver="1.5.7" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js"></script>
+    <script src="controllers.js"></script>
+    <script src="directives.js"></script>
+    <script src="services.js"></script>
+  </head>
+
+  <body ng-app="todoApp" ng-controller="TodoCtrl"> <!--ng-init="name='Amy C'" initial value-->
+    <!--<h1>TodoList!</h1>-->
+    <todo-title></todo-title> <!--self created tag that works as h1-->
+    
+   <!-- {{todo}}
+    <h3>{{todo.title}}</h3>
+    <p>{{todo.completed}}</p>
+    <date>{{todo.createdAt}}</date>-->
+    
+    <todo-form></todo-form>
+<!--    <form name="todoForm" ng-submit="add(newTodoTitle)">
+      <div class="input-group">
+        <input type="text" ng-model="newTodoTitle" class="form-control" placeholder="Add new list" autofocus minlength="3">
+        <span class="input-group-btn">
+          <button class="btn btn-success" type="submit">Add</button>
+        </span>
+      </div>
+    </form>-->
+    
+    
+    
+    <!--<div ng-show="todoForm.$dirty && todoForm.$invalid">
+      <div class="alert alert-warning" role="alert">Type at least 3 letters</div>
+    </div>-->
+    
+    <!--<pre>{{todoForm | json}}</pre>-->
+    
+    <ul class="list-unstyled">
+      <li ng-repeat="todo in todos | filter:statusFilter">
+        <todo-item></todo-item>
+        <!--<div class="input-group">-->
+        <!--    <span class="input-group-addon">-->
+        <!--      <input type="checkbox" ng-model="todo.completed" aria-label="...">-->
+        <!--    </span>-->
+        <!--    <input type="text" ng-model="todo.title" class="form-control" placeholder="Search for...">-->
+        <!--    <span class="input-group-btn">-->
+        <!--      <button class="btn btn-danger" type="button" ng-click="remove(todo)">Delete</button>-->
+        <!--    </span>-->
+        <!--</div>     -->
+        <!--<date>{{todo.createdAt | date:'yyyy-MM-dd HH:mm:ss'}}</date>-->
+      </li>
+    </ul>
+    
+    <todo-filters></todo-filters>
+    <!--<button class="btn btn-primary" ng-click="statusFilter={completed:true}">Completed</button>
+    <button class="btn btn-primary" ng-click="statusFilter={completed:false}" style="background:green">Active</button>
+    <button class="btn btn-primary" ng-click="statusFilter={}" style="background:yellow;color:#000">View all</button>-->
+  </body>
+
+</html>

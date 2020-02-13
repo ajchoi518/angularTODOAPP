@@ -1,0 +1,5 @@
+/* Styles go here */
+
+.input-group .ng-dirty.ng-invalid{border:2px solid red;}
+
+.input-group .ng-dirty.ng-valid{border:2px solid green;}
